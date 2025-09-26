@@ -7,77 +7,118 @@
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #f3f4f6;
+            background-color: #0a0a0a; /* A new, darker background */
+        }
+        .text-gradient {
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            /* New, super vibrant gradient */
+            background-image: linear-gradient(to right, #22d3ee, #f472b6); /* Cyan to pink */
+        }
+        /* More pronounced and colorful hover effect with glow */
+        .card-glow-hover:hover {
+            box-shadow: 0 0 30px rgba(34, 211, 238, 0.5), 0 0 60px rgba(244, 114, 182, 0.5);
+            transform: translateY(-8px);
+        }
+        .vibrant-icon {
+            transform: rotate(0deg);
+            transition: transform 0.3s ease;
+        }
+        .vibrant-icon:hover {
+            transform: rotate(15deg);
         }
     </style>
 </head>
-<body class="bg-gray-100 text-gray-800">
+<body class="text-gray-100">
 
     <!-- Header Section -->
-    <header class="bg-white shadow-sm py-6">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col sm:flex-row items-center justify-between">
-                <h1 class="text-3xl font-bold text-gray-900">Suryajith T S</h1>
-                <nav class="mt-4 sm:mt-0">
-                    <ul class="flex space-x-4">
-                        <li><a href="#about" class="text-gray-600 hover:text-gray-900 font-medium transition duration-300">About</a></li>
-                        <li><a href="#education" class="text-gray-600 hover:text-gray-900 font-medium transition duration-300">Education</a></li>
-                        <li><a href="#contact" class="text-gray-600 hover:text-gray-900 font-medium transition duration-300">Contact</a></li>
-                    </ul>
-                </nav>
-            </div>
+    <header class="bg-black shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4 flex flex-col sm:flex-row items-center justify-between">
+            <h1 class="text-3xl font-extrabold text-white text-gradient">Suryajith T S</h1>
+            <nav class="mt-4 sm:mt-0">
+                <ul class="flex space-x-4">
+                    <li><a href="#about" class="text-gray-300 hover:text-cyan-400 font-medium transition-colors duration-300">About</a></li>
+                    <li><a href="#education" class="text-gray-300 hover:text-cyan-400 font-medium transition-colors duration-300">Education</a></li>
+                    <li><a href="#skills" class="text-gray-300 hover:text-cyan-400 font-medium transition-colors duration-300">Skills</a></li>
+                    <li><a href="#projects" class="text-gray-300 hover:text-cyan-400 font-medium transition-colors duration-300">Projects</a></li>
+                    <li><a href="#contact" class="text-gray-300 hover:text-cyan-400 font-medium transition-colors duration-300">Contact</a></li>
+                </ul>
+            </nav>
         </div>
     </header>
 
-    <main class="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <main class="container mx-auto px-4 py-12">
+        <!-- Hero Section -->
+        <section class="flex flex-col md:flex-row items-center justify-center text-center md:text-left mb-16">
+            <div class="mb-8 md:mb-0 md:mr-8">
+                <img src="https://placehold.co/150x150/f472b6/ffffff?text=Suryajith" alt="Profile Picture" class="rounded-full w-40 h-40 object-cover border-4 border-fuchsia-500 shadow-xl">
+            </div>
+            <div>
+                <h2 class="text-5xl font-extrabold text-white mb-2">Hello, I'm <span class="text-gradient">Suryajith</span>.</h2>
+                <p class="text-xl font-light text-gray-300">A passionate B-tech student from Wadakkanchery.</p>
+            </div>
+        </section>
+
         <!-- About Section -->
-        <section id="about" class="bg-white p-8 rounded-lg shadow-md mb-8">
-            <h2 class="text-2xl font-semibold text-gray-900 mb-4">About Me</h2>
-            <p class="text-lg text-gray-600 leading-relaxed">
+        <section id="about" class="bg-zinc-900 p-8 rounded-xl shadow-lg mb-8 transition duration-500 card-glow-hover">
+            <h2 class="text-2xl font-bold text-white mb-4">About Me</h2>
+            <p class="text-lg text-gray-300 leading-relaxed">
                 Hello! My name is Suryajith T S, and I am a passionate first-year B-tech student from **Wadakkanchery, Thrissur**. I am currently pursuing my degree at **Vidya Academy of Science and Technology**. I am eager to learn and explore new technologies and concepts in my field.
             </p>
         </section>
 
         <!-- Education Section -->
-        <section id="education" class="bg-white p-8 rounded-lg shadow-md mb-8">
-            <h2 class="text-2xl font-semibold text-gray-900 mb-4">Education</h2>
+        <section id="education" class="bg-zinc-900 p-8 rounded-xl shadow-lg mb-8 transition duration-500 card-glow-hover">
+            <h2 class="text-2xl font-bold text-white mb-4">Education</h2>
             <div class="space-y-4">
                 <div class="flex items-start">
-                    <div class="flex-shrink-0 w-12 h-12 flex items-center justify-center rounded-full bg-blue-100 text-blue-600 mr-4">
+                    <div class="flex-shrink-0 w-12 h-12 flex items-center justify-center rounded-full bg-fuchsia-500 text-white mr-4 shadow-md vibrant-icon">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.483 9.382 5 7.93 5c-.75 0-1.464.126-2.14.354M12 6.253c1.168-.77 2.618-1.253 4.07-1.253.75 0 1.464.126 2.14.354M12 6.253a6.746 6.746 0 00-6.747 6.747c0 3.722 3.024 6.746 6.747 6.746 3.723 0 6.747-3.024 6.747-6.747a6.746 6.746 0 00-6.747-6.746z"></path></svg>
                     </div>
                     <div>
-                        <h3 class="text-xl font-semibold text-gray-900">B-tech, 1st Year</h3>
-                        <p class="text-gray-600">Vidya Academy of Science and Technology</p>
+                        <h3 class="text-xl font-semibold text-white">B-tech, 1st Year</h3>
+                        <p class="text-gray-400">Vidya Academy of Science and Technology</p>
                         <p class="text-gray-500 text-sm">Wadakkanchery, Thrissur</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Placeholder for future content -->
-        <section class="bg-white p-8 rounded-lg shadow-md mb-8">
-            <h2 class="text-2xl font-semibold text-gray-900 mb-4">Projects</h2>
-            <p class="text-gray-600">
+        <!-- Skills Section -->
+        <section id="skills" class="bg-zinc-900 p-8 rounded-xl shadow-lg mb-8 transition duration-500 card-glow-hover">
+            <h2 class="text-2xl font-bold text-white mb-4">Skills</h2>
+            <div class="flex flex-wrap gap-4">
+                <span class="inline-block bg-cyan-600 text-white px-4 py-2 rounded-full font-semibold text-sm transition-transform duration-300 hover:scale-105">Python</span>
+                <span class="inline-block bg-cyan-600 text-white px-4 py-2 rounded-full font-semibold text-sm transition-transform duration-300 hover:scale-105">C++</span>
+                <span class="inline-block bg-cyan-600 text-white px-4 py-2 rounded-full font-semibold text-sm transition-transform duration-300 hover:scale-105">HTML</span>
+                <span class="inline-block bg-cyan-600 text-white px-4 py-2 rounded-full font-semibold text-sm transition-transform duration-300 hover:scale-105">CSS</span>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="bg-zinc-900 p-8 rounded-xl shadow-lg mb-8 transition duration-500 card-glow-hover">
+            <h2 class="text-2xl font-bold text-white mb-4">Projects</h2>
+            <p class="text-gray-300">
                 This section is a great place to showcase your academic or personal projects. You can add more details here as you build your portfolio.
             </p>
         </section>
 
         <!-- Contact Section -->
-        <section id="contact" class="bg-white p-8 rounded-lg shadow-md">
-            <h2 class="text-2xl font-semibold text-gray-900 mb-4">Get in Touch</h2>
-            <p class="text-gray-600">
+        <section id="contact" class="bg-zinc-900 p-8 rounded-xl shadow-lg transition duration-500 card-glow-hover">
+            <h2 class="text-2xl font-bold text-white mb-4">Get in Touch</h2>
+            <p class="text-gray-300">
                 You can add a contact form, social media links, or an email address here.
             </p>
         </section>
     </main>
 
     <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-4 mt-8">
-        <div class="container mx-auto text-center text-sm">
+    <footer class="bg-black text-white py-4 mt-8">
+        <div class="container mx-auto text-center text-sm text-gray-500">
             <p>&copy; 2024 Suryajith T S. All rights reserved.</p>
         </div>
     </footer>
